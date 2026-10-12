@@ -1,0 +1,46 @@
+{% extends "booking/base.html" %}
+{% block title %}My appointments{% endblock %}
+{% block content %}
+<h1 class="page-title">My appointments</h1>
+{% if appointments %}
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead><tr><th>Doctor</th><th>Date</th><th>Time</th><th>Reason</th><th></th></tr></thead>
+      <tbody>
+      {% for a in appointments %}
+        <tr>
+          <td>{{ a.slot.doctor }}</td>
+          <td>{{ a.slot.date|date:"d M Y" }}</td>
+          <td>{{ a.slot.start_time|time:"H:i" }}</td>
+          <td>{{ a.reason }}</td>
+          <td class="text-end">
+            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelModal"
+                    data-action="{% url 'cancel_appointment' a.pk %}" data-doctor="{{ a.slot.doctor }}">Cancel</button>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  <p class="empty">You have no appointments yet. <a class="text-link" href="{% url 'doctor_list' %}">Find a doctor</a>.</p>
+{% endif %}
+
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h5" id="cancelTitle">Cancel this appointment?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Your visit with <strong id="cancel-doctor"></strong> will be removed, and the time will open for other patients.</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Keep appointment</button>
+        <form id="cancel-form" method="post" class="m-0">{% csrf_token %}
+          <button class="btn btn-danger">Cancel appointment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

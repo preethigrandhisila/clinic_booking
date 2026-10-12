@@ -1,0 +1,38 @@
+{% extends "booking/base.html" %}
+{% block title %}Find a doctor{% endblock %}
+{% block content %}
+<h1 class="page-title">Find a doctor</h1>
+<form class="search-bar row g-2 mb-4" method="get">
+  <div class="col-md-5">
+    <label class="visually-hidden" for="live-search">Search doctors</label>
+    <input id="live-search" name="q" value="{{ q }}" placeholder="Name or specialty">
+  </div>
+  <div class="col-md-4">
+    <label class="visually-hidden" for="dept">Department</label>
+    <select id="dept" name="dept">
+      <option value="">All departments</option>
+      {% for d in departments %}
+        <option value="{{ d.pk }}" {% if dept == d.pk|stringformat:"s" %}selected{% endif %}>{{ d.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-3"><button class="btn btn-teal w-100">Apply</button></div>
+</form>
+
+<ul class="doctor-list list-unstyled m-0">
+  {% for doctor in doctors %}
+    <li class="doctor-row" data-search="{{ doctor.name|lower }} {{ doctor.specialization|lower }} {{ doctor.department.name|lower }}">
+      <div>
+        <h2 class="doctor-name">{{ doctor }}</h2>
+        <p class="meta mb-0">{{ doctor.specialization }}, {{ doctor.department.name }}</p>
+      </div>
+      <div class="doctor-action">
+        <p class="meta mb-2">₹{{ doctor.consultation_fee }} consultation</p>
+        <a class="text-link" href="{% url 'doctor_detail' doctor.pk %}">See open times</a>
+      </div>
+    </li>
+  {% empty %}
+    <li class="empty">No doctors match that search. Try a shorter term or clear the department filter.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

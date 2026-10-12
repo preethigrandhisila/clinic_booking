@@ -1,0 +1,21 @@
+{% extends "booking/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="narrow">
+  <h1 class="page-title">{{ title }}</h1>
+  <form method="post" class="mt-4">{% csrf_token %}
+    {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors }}</div>{% endif %}
+    {% for field in form %}
+      <div class="mb-3">
+        {{ field.label_tag }}
+        {{ field }}
+        {% for e in field.errors %}<div class="text-danger small mt-1">{{ e }}</div>{% endfor %}
+      </div>
+    {% endfor %}
+    <button class="btn btn-teal">{{ title }}</button>
+  </form>
+  {% if title == "Log in" %}
+    <p class="meta mt-4">New patient? <a class="text-link" href="{% url 'signup' %}">Create an account</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}

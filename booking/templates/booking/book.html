@@ -1,0 +1,21 @@
+{% extends "booking/base.html" %}
+{% block title %}Confirm booking{% endblock %}
+{% block content %}
+<div class="narrow">
+  <h1 class="page-title">Confirm your visit</h1>
+  <p class="meta">{{ slot.doctor }}, {{ slot.date|date:"l, j F Y" }} at {{ slot.start_time|time:"H:i" }}</p>
+  <form method="post" class="mt-4">{% csrf_token %}
+    {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors }}</div>{% endif %}
+    <div class="mb-4">
+      <label for="id_reason" class="form-label">{{ form.reason.label }}</label>
+      {{ form.reason }}
+      <div class="d-flex justify-content-between small text-muted mt-1">
+        <span>At least 5 characters.</span><span id="reason-count">0/300</span>
+      </div>
+      {% for e in form.reason.errors %}<div class="text-danger small mt-1">{{ e }}</div>{% endfor %}
+    </div>
+    <button class="btn btn-teal">Confirm booking</button>
+    <a class="text-link ms-3" href="{% url 'doctor_detail' slot.doctor.pk %}">Choose another time</a>
+  </form>
+</div>
+{% endblock %}

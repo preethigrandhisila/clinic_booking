@@ -1,0 +1,20 @@
+{% extends "booking/base.html" %}
+{% block title %}{{ doctor }}{% endblock %}
+{% block content %}
+<a class="text-link" href="{% url 'doctor_list' %}">Back to doctors</a>
+<h1 class="page-title mt-3 mb-1">{{ doctor }}</h1>
+<p class="meta">{{ doctor.specialization }}, {{ doctor.department.name }}. Consultation fee ₹{{ doctor.consultation_fee }}.</p>
+
+<h2 class="section-title">Pick a time</h2>
+<div class="date-field mb-4">
+  <label class="form-label" for="slot-date">Date</label>
+  <input type="date" id="slot-date" value="{{ date_str }}" min="{{ today }}">
+</div>
+<div id="slot-list" class="slot-list" data-api="{% url 'slots_api' doctor.pk %}">
+  {% for s in slots %}
+    <a class="slot" href="{% url 'book_slot' s.pk %}">{{ s.start_time|time:"H:i" }} to {{ s.end_time|time:"H:i" }}</a>
+  {% empty %}
+    <p class="empty">No open times on this date. Try another day.</p>
+  {% endfor %}
+</div>
+{% endblock %}
