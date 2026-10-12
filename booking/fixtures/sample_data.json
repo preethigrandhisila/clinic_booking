@@ -1748,6 +1748,246 @@
   }
 },
 {
+  "model": "booking.timeslot",
+  "pk": 169,
+  "fields": {
+    "doctor": 1,
+    "date": "2026-10-12",
+    "start_time": "09:00:00",
+    "end_time": "09:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 170,
+  "fields": {
+    "doctor": 1,
+    "date": "2026-10-12",
+    "start_time": "10:00:00",
+    "end_time": "10:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 171,
+  "fields": {
+    "doctor": 1,
+    "date": "2026-10-12",
+    "start_time": "11:00:00",
+    "end_time": "11:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 172,
+  "fields": {
+    "doctor": 1,
+    "date": "2026-10-12",
+    "start_time": "14:00:00",
+    "end_time": "14:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 173,
+  "fields": {
+    "doctor": 1,
+    "date": "2026-10-12",
+    "start_time": "15:00:00",
+    "end_time": "15:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 174,
+  "fields": {
+    "doctor": 1,
+    "date": "2026-10-12",
+    "start_time": "16:00:00",
+    "end_time": "16:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 175,
+  "fields": {
+    "doctor": 2,
+    "date": "2026-10-12",
+    "start_time": "09:00:00",
+    "end_time": "09:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 176,
+  "fields": {
+    "doctor": 2,
+    "date": "2026-10-12",
+    "start_time": "10:00:00",
+    "end_time": "10:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 177,
+  "fields": {
+    "doctor": 2,
+    "date": "2026-10-12",
+    "start_time": "11:00:00",
+    "end_time": "11:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 178,
+  "fields": {
+    "doctor": 2,
+    "date": "2026-10-12",
+    "start_time": "14:00:00",
+    "end_time": "14:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 179,
+  "fields": {
+    "doctor": 2,
+    "date": "2026-10-12",
+    "start_time": "15:00:00",
+    "end_time": "15:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 180,
+  "fields": {
+    "doctor": 2,
+    "date": "2026-10-12",
+    "start_time": "16:00:00",
+    "end_time": "16:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 181,
+  "fields": {
+    "doctor": 3,
+    "date": "2026-10-12",
+    "start_time": "09:00:00",
+    "end_time": "09:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 182,
+  "fields": {
+    "doctor": 3,
+    "date": "2026-10-12",
+    "start_time": "10:00:00",
+    "end_time": "10:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 183,
+  "fields": {
+    "doctor": 3,
+    "date": "2026-10-12",
+    "start_time": "11:00:00",
+    "end_time": "11:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 184,
+  "fields": {
+    "doctor": 3,
+    "date": "2026-10-12",
+    "start_time": "14:00:00",
+    "end_time": "14:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 185,
+  "fields": {
+    "doctor": 3,
+    "date": "2026-10-12",
+    "start_time": "15:00:00",
+    "end_time": "15:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 186,
+  "fields": {
+    "doctor": 3,
+    "date": "2026-10-12",
+    "start_time": "16:00:00",
+    "end_time": "16:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 187,
+  "fields": {
+    "doctor": 4,
+    "date": "2026-10-12",
+    "start_time": "09:00:00",
+    "end_time": "09:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 188,
+  "fields": {
+    "doctor": 4,
+    "date": "2026-10-12",
+    "start_time": "10:00:00",
+    "end_time": "10:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 189,
+  "fields": {
+    "doctor": 4,
+    "date": "2026-10-12",
+    "start_time": "11:00:00",
+    "end_time": "11:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 190,
+  "fields": {
+    "doctor": 4,
+    "date": "2026-10-12",
+    "start_time": "14:00:00",
+    "end_time": "14:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 191,
+  "fields": {
+    "doctor": 4,
+    "date": "2026-10-12",
+    "start_time": "15:00:00",
+    "end_time": "15:30:00"
+  }
+},
+{
+  "model": "booking.timeslot",
+  "pk": 192,
+  "fields": {
+    "doctor": 4,
+    "date": "2026-10-12",
+    "start_time": "16:00:00",
+    "end_time": "16:30:00"
+  }
+},
+{
   "model": "booking.appointment",
   "pk": 1,
   "fields": {

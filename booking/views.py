@@ -33,6 +33,13 @@ def open_slots(doctor, date):
 
 
 def doctor_list(request):
+    if not Doctor.objects.filter(is_active=True).exists():
+        try:
+            from django.core.management import call_command
+            call_command("seed_demo")
+        except Exception:
+            pass
+
     doctors = Doctor.objects.filter(is_active=True).select_related("department")
     q = request.GET.get("q", "").strip()
     dept = request.GET.get("dept", "")

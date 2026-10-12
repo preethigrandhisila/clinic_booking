@@ -25,9 +25,12 @@ class Command(BaseCommand):
             for name, spec, fee in doctors:
                 doctor, _ = Doctor.objects.get_or_create(
                     name=name,
-                    defaults={"department": dept, "specialization": spec, "consultation_fee": fee},
+                    defaults={"department": dept, "specialization": spec, "consultation_fee": fee, "is_active": True},
                 )
-                for offset in range(1, 8):
+                if not doctor.is_active:
+                    doctor.is_active = True
+                    doctor.save()
+                for offset in range(0, 8):
                     day = today + timedelta(days=offset)
                     for hour in SLOT_HOURS:
                         TimeSlot.objects.get_or_create(
